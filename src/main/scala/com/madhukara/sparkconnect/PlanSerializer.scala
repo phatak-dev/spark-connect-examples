@@ -26,7 +26,7 @@ object PlanSerializer {
     println(filteredDf.explain(true))
 
     //get the protofub plan object
-    val plan = sourceDf.plan
+    val plan = filteredDf.plan
     // write the protofub plan object to the file
     val file = new File("filterdef.ser")
     val fileOutputStream = new FileOutputStream(file)
