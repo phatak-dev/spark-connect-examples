@@ -21,12 +21,10 @@ object PlanSerializer {
     val sourceDf = sparkSession.createDataset(data)
     val filteredDf = sourceDf.filter("salary > 60000")
 
-    //print the plan
-
-    println(filteredDf.explain(true))
-
     //get the protofub plan object
     val plan = filteredDf.plan
+    //print the plan
+    println(plan)
     // write the protofub plan object to the file
     val file = new File("filterdef.ser")
     val fileOutputStream = new FileOutputStream(file)
